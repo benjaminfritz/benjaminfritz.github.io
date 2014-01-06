@@ -1,15 +1,15 @@
- /* Author: Carlos Alvarez
- * URL: http://alvarez.is
+ /* Author: Benjamin Fritz
+ * URL: http://werkshow.com
  *
- * Project Name: Kelvin - Free Bootstrap 3 Resume Theme
+ * Project Name: Benjamin Fritz – Resume Onepager
  * Version: 1.0
- * URL: http://blacktie.co
+ * URL: http://benjaminfritz.github.io
  */
 
 body {
   background-color: #f2f2f2;
     font-family: "Lato";
-    font-weight: 300;
+    font-weight: 500;
     font-size: 16px;
     color: #555;
 
@@ -20,7 +20,7 @@ body {
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway";
-    font-weight: 300;
+    font-weight: 700;
     color: #333;
 }
 
@@ -161,7 +161,7 @@ a:after {
 	background-position: center center;
 	min-height: 500px;
 	width: 100%;
-	
+
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -174,23 +174,24 @@ a:after {
 }
 
 #headerwrap h1 {
-	font-size: 80px;
-	color: white;
+	font-size: 60px;
+	color: rgba(255,255,255,0.8);
+	padding-top: 180px;
 }
 
 #headerwrap h3 {
-	font-size: 20px;
-	color: white;
+	font-size: 17px;
+	color: rgba(255,255,255,0.8);
 }
 
-/* Intnro Wrap */
+/* Intro Wrap */
 
 #intro {
 	background: #2c3e50;
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: white;
-} 
+}
 
 #intro h5, p {
 	color: white;
@@ -238,19 +239,6 @@ a:after {
 	padding-right: 8px;
 	color: #1abc9c;
 }
-
-/* Copyright Wrap */
-
-#c {
-	background: #222222;
-	padding-top: 15px;
-	text-align: right;
-}
-
-#c p {
-	color: white
-}
-
 
 
 /* Global Values */
