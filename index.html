@@ -42,7 +42,7 @@
 							<li class="menu-item"><a class="smoothScroll" href="#about" title="Intro"><i class="icon-male"></i></a></li>
 							<li class="menu-item"><a class="smoothScroll" href="#resume" title="Resume"><i class="icon-list-ul"></i></a></li>
 							<li class="menu-item"><a class="smoothScroll" href="#work" title="Showcase"><i class="icon-magic"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contacts"><i class="icon-inbox"></i></a></li>
+							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-inbox"></i></a></li>
 						</ul><!--/ uL#nav -->
 					</div><!-- /.dropdown -->
 
@@ -75,12 +75,12 @@
 					<h2>Intro</h2>
 				</div>
 				<div class="col-lg-6">
-					<p>Hi, my name is Benjamin and I'm a curious Interaction Designer. My professional experience spans five years, I spent 3 ½ years as Art Director in Advertising and graduated with a Bachelor's degree in Communication Design from an University with a deep root in the Bauhaus movement.</p>
+					<p>Hi, my name is Benjamin and I'm a curious Interaction Designer. My professional experience spans five years, I spent 3 ½ years as an Art Director in Advertising and graduated with a Bachelor's degree in Communication Design from an University with a deep root in the Bauhaus movement.</p>
 					<p style="border-bottom: 2px solid white;">Visual Communication is my passion.</p>
 				</div>
-				<div class="col-lg-3">
+				<!-- <div class="col-lg-3">
 					<p><a href="#"><i class="icon-file"></i></a> <sm>Download Resume (PDF)</sm></p>
-				</div>
+				</div> -->
 
 			</div><!--/.row -->
 		</div><!--/.container -->
@@ -134,7 +134,7 @@
 					<p><t>Interaction Designer & Frontend Helper</t><br/>
 						<a href="http://tweek.tv" target="_blank">Tweek</a><br/>
 					</p>
-					<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</more></p>
+					<p><more>At Tweek I'm mainly responsible for the UX & UI of our showcase app <a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank">Tweek</a> but find myself more often helping out in various frontend tasks like creating and maintaining our weekly newsletter, editing our landing page and creating responsive microsites like <a href="http://api.tweek.tv" target="_blank">Tweek Engine</a>.</more></p>
 				</div>
 				<div class="col-lg-3">
 					<p><sm>FEBRUARY 2013 - TODAY</sm><br>
@@ -183,7 +183,7 @@
 						<h2>Skills</h2>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="javascript" height="130" width="130"></canvas>
+						<canvas id="graphicdesign" height="130" width="130"></canvas>
 						<p>GRAPHIC DESIGN</p>
 						<br>
 						<script>
@@ -197,11 +197,29 @@
 										color : "#ecf0f1"
 									}
 								];
-								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+								var myDoughnut = new Chart(document.getElementById("graphicdesign").getContext("2d")).Doughnut(doughnutData);
 						</script>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="bootstrap" height="130" width="130"></canvas>
+						<canvas id="icondesign" height="130" width="130"></canvas>
+						<p>ICON DESIGN/ILLUSTRATION</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 80,
+										color:"#FF4136"
+									},
+									{
+										value : 20,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("icondesign").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
+						<canvas id="retouch" height="130" width="130"></canvas>
 						<p>RETOUCHING</p>
 						<br>
 						<script>
@@ -215,29 +233,29 @@
 										color : "#ecf0f1"
 									}
 								];
-								var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="wordpress" height="130" width="130"></canvas>
-						<p>ILLUSTRATION/ICON DESIGN</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 80,
-										color:"#FF4136"
-									},
-									{
-										value : 20,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
+								var myDoughnut = new Chart(document.getElementById("retouch").getContext("2d")).Doughnut(doughnutData);
 						</script>
 					</div>
 
 					<div class="col-lg-3 col-lg-offset-3 centered">
+						<canvas id="conception" height="130" width="130"></canvas>
+						<p>CONCEPTION/PROTOTYPING</p>
+						<br>
+						<script>
+							var doughnutData = [
+									{
+										value: 65,
+										color:"#FF4136"
+									},
+									{
+										value : 35,
+										color : "#ecf0f1"
+									}
+								];
+								var myDoughnut = new Chart(document.getElementById("conception").getContext("2d")).Doughnut(doughnutData);
+						</script>
+					</div>
+					<div class="col-lg-3 centered">
 						<canvas id="html" height="130" width="130"></canvas>
 						<p>HTML/CSS</p>
 						<br>
@@ -256,8 +274,8 @@
 						</script>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="photoshop" height="130" width="130"></canvas>
-						<p>JavaScript</p>
+						<canvas id="javascript" height="130" width="130"></canvas>
+						<p>JAVASCRIPT</p>
 						<br>
 						<script>
 							var doughnutData = [
@@ -270,28 +288,9 @@
 										color : "#ecf0f1"
 									}
 								];
-								var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
+								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
 						</script>
 					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="illustrator" height="130" width="130"></canvas>
-						<p>CONCEPTIONAL DESIGN</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 65,
-										color:"#FF4136"
-									},
-									{
-										value : 35,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-
 			</div><!--/.row -->
 			<br>
 		</div><!--/.container -->
@@ -307,12 +306,12 @@
 					<h2>Showcase</h2>
 				</div>
 				<div class="col-lg-6">
-					<p><img class="img-responsive" src="http://placehold.it/931x698" alt=""></p>
+					<p><a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank"><img class="img-responsive" src="assets/img/p1-tweek.png" alt="Tweek for iPhone and iPad"></a></p>
 				</div>
 				<div class="col-lg-3">
-					<p>PROJECT 1</p>
-				<p><more>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
-					<sm><i class="icon-tag"></i> design</sm></more>
+					<p>TWEEK</p>
+				<p><more>The past year our little team worked on the redesign of the Tweek App for iPhone and iPad with a friendlier, brighter design and some tweaks in the interface under my lead.<br/><br/><a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank"><img src="assets/img/app-store.svg" width="260" alt="Try it out!"></a><br/><br/>Bonus: <a href="https://vimeo.com/62628258" target="_blank">Promo animation</a> in AfterEffects.<br/><br/>
+					<sm><i class="icon-tag"></i> ui design, ux, conception, mobile</sm></more>
 				</p>
 				</div>
 
@@ -350,7 +349,7 @@
 			<div class="row">
 
 				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Contacts</h2>
+					<h2>Contact</h2>
 				</div>
 				<div class="col-lg-6">
 					<p><t>Email:</t><br/>
