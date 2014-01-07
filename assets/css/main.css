@@ -8,8 +8,8 @@
 
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
-    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: #555;
 
@@ -18,9 +18,15 @@ body {
 }
 
 /* Titles */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
-    font-weight: 700;
+h1, h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    color: #333;
+}
+
+h2, h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
     color: #333;
 }
 
@@ -37,7 +43,7 @@ p {
 
 /* Links */
 a {
-    color: #f85c37;
+    color: #FF4136;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -49,7 +55,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #7b7b7b;
+    color: #0074D9;
     text-decoration: none;
     outline: 0;
 }
@@ -60,7 +66,7 @@ a:after {
     -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
     -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
 }
 
  hr {
@@ -84,7 +90,7 @@ a:after {
 	right: 0;
 	z-index: 10000;
 	overflow: visible;
-	font: normal 16px/24px  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: normal 16px/24px  'Open Sans', sans-serif;
 }
 
 #section-topbar a {
@@ -92,7 +98,7 @@ a:after {
 }
 
 #topbar-inner {
-	background: #111;
+	background: #001F3F;
 	line-height: 0;
 	text-align: center;
 }
@@ -108,7 +114,7 @@ a:after {
 	margin: 0;
 	padding: 0;
 
-	border-right: 1px solid #222;
+	border-right: 1px solid #001F3F;
 
 	/* For IE, the outcast */
 	zoom:1;
@@ -127,22 +133,22 @@ a:after {
   font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   padding: 18px 20px 18px 20px;
-  border-left: 1px solid #222;
+  border-left: 1px solid #001F3F;
 }
 
 	#section-topbar ul#nav a:hover {
-	  background: #222;
+	  background: #0074D9;
 	  text-decoration: none;
-	  border-left: 1px solid #111;
+	  border-left: 1px solid #001F3F;
 	}
 
 	#section-topbar ul#nav .active a {
 		background: #44bbaa;
-		border-left: 1px solid #111;
+		border-left: 1px solid #001F3F;
 	}
 
 		#section-topbar ul#nav .active a:hover {
-			background: #44bbaa;
+			background: #0074D9;
 		}
 #section-topbar i {
 	font-size: 25px;
@@ -155,7 +161,7 @@ a:after {
 #headerwrap {
 	background: url(../img/header-bg.jpg) no-repeat center top;
 	margin-top: 60px;
-	padding-top:140px;
+	padding-top:130px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -175,25 +181,25 @@ a:after {
 
 #headerwrap h1 {
 	font-size: 60px;
-	color: rgba(255,255,255,0.8);
+	color: rgba(255,255,255,0.6);
 	padding-top: 180px;
 }
 
 #headerwrap h3 {
 	font-size: 17px;
-	color: rgba(255,255,255,0.8);
+	color: rgba(255,255,255,0.6);
 }
 
 /* Intro Wrap */
 
 #intro {
-	background: #2c3e50;
+	background: #FF4136;
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: white;
 }
 
-#intro h5, p {
+#intro h4, p {
 	color: white;
 }
 
@@ -206,18 +212,18 @@ a:after {
 
 
 #skillswrap {
-	background: #2c3e50;
+	background: #001F3F;
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: white;
 }
 
-#skillswrap h5, p {
+#skillswrap h4, p {
 	color: white;
 }
 
 #footwrap {
-	background: #2f2f2f;
+	background: #001F3F;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
@@ -226,7 +232,7 @@ a:after {
 	color: white;
 }
 
-#footwrap h5 {
+#footwrap h4 {
 	color: white;
 }
 
@@ -237,7 +243,7 @@ a:after {
 
 #footwrap i {
 	padding-right: 8px;
-	color: #1abc9c;
+	color: white;
 }
 
 
@@ -248,7 +254,7 @@ a:after {
 }
 
 .desc p {
-	color: #2f2f2f;
+	color: #001F3F;
 }
 
 .desc t {
