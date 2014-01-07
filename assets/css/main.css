@@ -18,16 +18,16 @@ body {
 }
 
 /* Titles */
-h1, h3 {
+h1, h2 {
     font-family: "Playfair Display", serif;
     font-weight: 900;
-    color: #333;
+    color: #001F3F;
 }
 
-h2, h4, h5, h6 {
+h3, h4, h5, h6 {
     font-family: "Open Sans", sans-serif;
     font-weight: 800;
-    color: #333;
+    color: #001F3F;
 }
 
 
@@ -161,7 +161,7 @@ a:after {
 #headerwrap {
 	background: url(../img/header-bg.jpg) no-repeat center top;
 	margin-top: 60px;
-	padding-top:130px;
+	padding-top:60px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -181,13 +181,13 @@ a:after {
 
 #headerwrap h1 {
 	font-size: 60px;
-	color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.7);
 	padding-top: 180px;
 }
 
 #headerwrap h3 {
 	font-size: 17px;
-	color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.7);
 }
 
 /* Intro Wrap */
@@ -199,7 +199,7 @@ a:after {
 	color: white;
 }
 
-#intro h4, p {
+#intro h2, p {
 	color: white;
 }
 
@@ -218,7 +218,7 @@ a:after {
 	color: white;
 }
 
-#skillswrap h4, p {
+#skillswrap h2, p {
 	color: white;
 }
 
@@ -232,7 +232,7 @@ a:after {
 	color: white;
 }
 
-#footwrap h4 {
+#footwrap h2 {
 	color: white;
 }
 
@@ -242,8 +242,8 @@ a:after {
 }
 
 #footwrap i {
-	padding-right: 8px;
-	color: white;
+	padding-right: 15px;
+	font-size: 32px;
 }
 
 
