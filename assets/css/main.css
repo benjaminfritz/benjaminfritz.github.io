@@ -98,7 +98,7 @@ a:after {
 }
 
 #topbar-inner {
-	background: #001F3F;
+	background: rgba(0, 31, 63, 0.75);
 	line-height: 0;
 	text-align: center;
 }
