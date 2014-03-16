@@ -133,7 +133,7 @@ a:after {
   font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   padding: 18px 20px 18px 20px;
-  border-left: 1px solid #001F3F;
+  /* border-left: 1px solid #001F3F; */
 }
 
 	#section-topbar ul#nav a:hover {
