@@ -114,7 +114,7 @@ a:after {
 	margin: 0;
 	padding: 0;
 
-	border-right: 1px solid #001F3F;
+	/* border-right: 1px solid #001F3F; */
 
 	/* For IE, the outcast */
 	zoom:1;
