@@ -139,12 +139,12 @@ a:after {
 	#section-topbar ul#nav a:hover {
 	  background: #0074D9;
 	  text-decoration: none;
-	  border-left: 1px solid #001F3F;
+	  /* border-left: 1px solid #001F3F; */
 	}
 
 	#section-topbar ul#nav .active a {
 		background: #44bbaa;
-		border-left: 1px solid #001F3F;
+		/* border-left: 1px solid #001F3F; */
 	}
 
 		#section-topbar ul#nav .active a:hover {
