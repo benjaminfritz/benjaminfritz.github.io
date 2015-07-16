@@ -1,390 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, minimal-ui">
-    <meta name="description" content="Portfolio of Benjamin Fritz">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Benjamin Fritz, Interaction Designer from Berlin">
     <meta name="author" content="Benjamin Fritz">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Benjamin Fritz — Interaction Designer & Front End Developer from Berlin</title>
+    <title>Benjamin Fritz — Interaction Designer from Berlin</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
 
-	  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-    <script src="assets/js/Chart.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#nav">
+</head>
 
-	<div id="section-topbar">
-		<div id="topbar-inner">
-			<div class="container">
-				<div class="row">
-					<div class="dropdown">
-						<ul id="nav" class="nav">
-							<li class="menu-item"><a class="smoothScroll" href="#about" title="Intro"><i class="icon-male"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#resume" title="Resume"><i class="icon-list-ul"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#work" title="Showcase"><i class="icon-magic"></i></a></li>
-							<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-inbox"></i></a></li>
-						</ul><!--/ uL#nav -->
-					</div><!-- /.dropdown -->
+<body id="page-top" class="index">
 
-					<div class="clear"></div>
-				</div><!--/.row -->
-			</div><!--/.container -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Benjamin Fritz</a>
+            </div>
 
-			<div class="clear"></div>
-		</div><!--/ #topbar-inner -->
-	</div><!--/ #section-topbar -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#clients">Clients</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-12 animated fadeInDown">
-					<h1 class="">Benjamin Fritz</h1>
-					<h3>Interaction Designer & Front End Developer</h3>
-				</div><!--/.col-lg-12 -->
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/.#headerwrap -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Hi, I'm Benjamin Fritz.</div>
+                <div class="intro-heading">Interaction Designer</div>
+                <a href="#services" class="page-scroll btn btn-xl">Nice to meet you</a>
+            </div>
+        </div>
+    </header>
 
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <h3 class="section-subheading text-muted">The spectrum of skills I can offer you. I'm here to help.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-hand-o-up fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Interaction Design</h4>
+                    <p class="text-muted">From the concept or prototype of an app to the layout of a multi-page website – if you can touch or click on a screen, I take care of that.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Front-End Development</h4>
+                    <p class="text-muted">Altough a trained designer with roughly 10 years of experience my knowledge also spans HTML, CSS and jQuery. Responsive web design? Done.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-paint-brush fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Graphic Design</h4>
+                    <p class="text-muted">All the things you expect from a traditional graphic designer get happily tackled, too: Icon Design, Illustration, Corporate Identity, etc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section id="about" name="about"></section>
-	<div id="intro">
-		<div class="container">
-			<div class="row">
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Get a glimpse of the work I produced lately.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Round Icons</h4>
+                        <p class="text-muted">Graphic Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Startup Framework</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Treehouse</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Golden</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Escape</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-expand fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Dreams</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Intro</h2>
-				</div>
-				<div class="col-lg-6">
-					<p>Hi, my name is Benjamin and I'm a curious Interaction Designer. My professional experience spans five years, I spent 3 ½ years as an Art Director in Advertising and graduated with a Bachelor's degree in Communication Design from an University with a deep root in the Bauhaus movement.</p>
-					<p style="border-bottom: 2px solid white;">Visual Communication is my passion.</p>
-				</div>
-				<!-- <div class="col-lg-3">
-					<p><a href="#"><i class="icon-file"></i></a> <sm>Download Resume (PDF)</sm></p>
-				</div> -->
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">An overview of the different stations that formed my experience.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="Logo HfG Schwaebisch Gmuend">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2006 — 2009</h4>
+                                    <h4 class="subheading">Bachelor of Arts in<br />Communication Design</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Over the course of 3.5 years I studied at the <a href="http://www.hfg-gmuend.de">University of Applied Sciences Schwaebisch Gmuend</a> and finished it with specializing in Interaction Design from the 3rd semester onwards with a B.A. degree.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="Logo Ogilvy CommonHealth Worldwide">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009</h4>
+                                    <h4 class="subheading">Ogilvy CommonHealth Spain</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">During my Erasmus semester in Madrid, Spain I did a 3-month internship in <a href="http://www.ogilvy.es/#/commonhealth">the healthcare unit of Ogilvy</a> where my tasks involved animation, motion design, banner advertising and editing promotional videos mostly for <strong>Cialis</strong>. </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="Logo Jung von Matt">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2010 — 2013</h4>
+                                    <h4 class="subheading">Jung von Matt/Neckar</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Starting as an intern in 2008 I worked my way up from Junior Art Director straight after graduating to Art Director Online at <a href="http://www.jvm-neckar.de/">Jung von Matt in Stuttgart</a> with clients like <strong>Nikon, <strong>Kabel Deutschland</strong>,  Bitburger</strong>, <strong>Bosch</strong>, <strong>Mercedes-Benz</strong> and <strong>Payback</strong>.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="Logo Tweek">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2013 — 2014</h4>
+                                    <h4 class="subheading">Tweek</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">At <a href="http://www.tweek.tv/">Tweek</a> my main responsibility was the UX & UI of the showcase <a href="http://itunes.apple.com/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8">iOS app</a> but after time I was also helping out in various frontend tasks like creating and maintaining the weekly newsletter, editing the main landing page and creating responsive microsites for sub-brands of the company.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/5.jpg" alt="Picture Benjamin Fritz">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #intro -->
+    <!-- Clients Section -->
+    <section id="clients" class="clients bg-light-gray">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">Selected Clients</h2>
+                  <h3 class="section-subheading text-muted">Just a little showing-off.</h3>
+              </div>
+          </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/vitra.png" class="img-responsive img-centered" height="50px" alt="Logo Vitra">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/opel.png" class="img-responsive img-centered" height="50px" alt="Logo Opel">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/penny.png" class="img-responsive img-centered" height="50px" alt="Logo Penny">
 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/arla.png" class="img-responsive img-centered" height="50px" alt="Logo Arla">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/fiat.png" class="img-responsive img-centered" height="50px" alt="Logo Fiat">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/rewe.png" class="img-responsive img-centered" height="50px" alt="Logo Rewe">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/abarth.png" class="img-responsive img-centered" height="50px" alt="Logo Abarth">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <img src="img/logos/jeep.png" class="img-responsive img-centered" height="50px" alt="Logo Jeep">
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section id="resume" name="resume"></section>
-	<!--EDUCATION DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Me</h2>
+                    <h3 class="section-subheading text-muted">Benjamin Fritz, Wisbyer Straße 10c, 10439 Berlin</h3>
+                    <h3 class="section-subheading text-muted">For project inquiries use this handy little form.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name*" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email*" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone*" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message*" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send me a Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Education</h2>
-				</div>
-				<div class="col-lg-6">
-					<p><t>BACHELOR OF ARTS COMMUNICATION DESIGN</t><br/>
-						<a href="http://www.hfg-gmuend.de/en/" target="_blank">University of Applied Sciences Schwaebisch Gmuend</a><br/>
-						<i>3,5 Years Course</i>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>WINTER 2009</sm><br/>
-					<!-- <imp><sm>IN PROGRESS</sm></imp> -->
-					</p>
-				</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">&copy; Made in 2015 by Benjamin Fritz</a></span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.twitter.com/benefritz"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/benjaminfritz"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://instagram.com/benjamin"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://dribbble.com/benjamin"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="https://github.com/benjaminfritz"><i class="fa fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Imprint</a>
+                        </li>
+                        <li><a href="#">Disclaimer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>German "Abitur"</t><br/>
-						<a href="http://www.rosenstein-gymnasium.de/" target="_blank">Rosenstein Gymnasium Heubach</a> <br/>
-						<i>9 Years Course</i>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>SUMMER 2004</sm></p>
-				</div>
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
 
-		</div><!--/.row -->
-		<br>
-		<hr>
-	</div><!--/.container -->
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                            <p>
+                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                            <ul class="list-inline">
+                                <li>Date: July 2014</li>
+                                <li>Client: Round Icons</li>
+                                <li>Category: Graphic Design</li>
+                            </ul>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Heading</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
+                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<!--WORK DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
+                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Work & Play</h2>
-				</div>
-				<div class="col-lg-6">
-					<p><t>Interaction Designer & Frontend Helper</t><br/>
-						<a href="http://tweek.tv" target="_blank">Tweek</a><br/>
-					</p>
-					<p><more>At Tweek I'm mainly responsible for the UX & UI of our showcase app <a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank">Tweek</a> but find myself more often helping out in various frontend tasks like creating and maintaining our weekly newsletter, editing our landing page and creating responsive microsites like <a href="http://api.tweek.tv" target="_blank">Tweek Engine</a>.</more></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>FEBRUARY 2013 - TODAY</sm><br>
-					<imp><sm>CURRENT WORK</sm></imp>
-					</p>
-				</div>
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
+                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Art Director</t><br/>
-						<a href="http://jvm-neckar.de" target="_blank">Jung von Matt/Neckar</a><br/>
-					</p>
-					<p><more>Starting as a Junior I quickly got promoted to a full-fledged Art Director in the Online Department of Jung von Matt/Neckar where I was responsible for clients like Nike, Nikon, Kabel Deutschland, Deutsche Post, Bitburger, Bosch, Mercedes-Benz, Payback & ProSieben.</more></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>MARCH 2010 - DECEMBER 2012</sm></p>
-				</div>
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
+                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Intern (Multimedia/Animation)</t><br/>
-						<a href="http://www.ogilvy.es/#/healthworld" target="_blank">Ogilvy Healthworld SPAIN</a><br/>
-					</p>
-					<p><more>Tasks involved mostly Motion Design, Graphic Design & Animation for Banner Advertising and Promotional Videos in Healthcare with clients like Cialis.</more></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>MAY 2009 - JULY 2009</sm></p>
-				</div>
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
+                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Intern</t><br/>
-						<a href="http://jvm-neckar.de" target="_blank">Jung von Matt/Neckar</a><br/>
-					</p>
-					<p><more>Support for my mentors (Art Directors) in the area of Graphic Design and first steps into the realm of Advertising.</more></p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>MARCH 2008 - AUGUST 2008</sm></p>
-				</div>
-		</div><!--/.row -->
-		<br>
-	</div><!--/.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-	<!--SKILLS DESCRIPTION -->
-	<div id="skillswrap">
-		<div class="container">
-			<div class="row">
-					<div class="col-lg-2 col-lg-offset-1">
-						<h2>Skills</h2>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="graphicdesign" height="130" width="130"></canvas>
-						<p>GRAPHIC DESIGN</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 95,
-										color:"#FF4136"
-									},
-									{
-										value : 05,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("graphicdesign").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="icondesign" height="130" width="130"></canvas>
-						<p>ICON DESIGN/ILLUSTRATION</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 80,
-										color:"#FF4136"
-									},
-									{
-										value : 20,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("icondesign").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="retouch" height="130" width="130"></canvas>
-						<p>RETOUCHING</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 70,
-										color:"#FF4136"
-									},
-									{
-										value : 30,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("retouch").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-					<div class="col-lg-3 col-lg-offset-3 centered">
-						<canvas id="conception" height="130" width="130"></canvas>
-						<p>CONCEPTION/PROTOTYPING</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 65,
-										color:"#FF4136"
-									},
-									{
-										value : 35,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("conception").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="html" height="130" width="130"></canvas>
-						<p>HTML/CSS</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 75,
-										color:"#FF4136"
-									},
-									{
-										value : 25,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("html").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-					<div class="col-lg-3 centered">
-						<canvas id="javascript" height="130" width="130"></canvas>
-						<p>JAVASCRIPT</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 50,
-										color:"#FF4136"
-									},
-									{
-										value : 50,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
-						</script>
-					</div>
-			</div><!--/.row -->
-			<br>
-		</div><!--/.container -->
-	</div><!--/ #skillswrap -->
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
 
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
 
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
 
-	<section id="work" name="work"></section>
-	<!--PORTFOLIO DESCRIPTION -->
-	<div class="container desc">
-		<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Showcase</h2>
-				</div>
-				<div class="col-lg-6">
-					<p><a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank"><img class="img-responsive" src="assets/img/p1-tweek.png" alt="Tweek for iPhone and iPad"></a></p>
-				</div>
-				<div class="col-lg-3">
-					<p>TWEEK</p>
-				<p><more>The past year our little team worked on the redesign of the Tweek App for iPhone and iPad with a friendlier, brighter design and some tweaks in the interface under my lead.<br/><br/><a href="http://itunes.apple.com/de/app/tweek-social-tv-live-fernsehen/id499215733?partnerId=2003&tduid=DE2041319&mt=8" target="_blank"><img src="assets/img/app-store.svg" width="260" alt="Try it out!"></a><br/><br/>Bonus: <a href="https://vimeo.com/62628258" target="_blank">Promo animation</a> made in AfterEffects.<br/><br/>
-					<!-- <sm><i class="icon-tag"></i> ui design, ux, conception, mobile</sm></more> -->
-				</p>
-				</div>
+</body>
 
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><a href="https://web.archive.org/web/20121025032642/http://a-class.mercedes-benz.com/de/de/" target="_blank"><img class="img-responsive" src="assets/img/p2-a-class.png" alt="Mercedes-Benz A-Class 2012 Webspecial"></a></p>
-				</div>
-				<div class="col-lg-3">
-						<p>A-Class 2012 Webspecial</p>
-					<p><more>The final challenge during my career as Art Director at <a href="http://jvm-neckar.de" target="_blank">Jung von Matt</a> was to integrate the financial department of Mercedes-Benz into the webspecial for the 2012 launch of the redesigned A-Class. Our little section was responsively designed to blend flawlessly into the <a href="https://web.archive.org/web/20121025032642/http://a-class.mercedes-benz.com/de/de/" target="_blank">campaign website</a>.<br/><br/>
-						<!-- <sm><i class="icon-tag"></i> conception, layout, frontend</sm></more> -->
-					</p>
-				</div>
-
-				<div class="col-lg-6 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/p3-bosch-iaa.png" alt="Bosch IAA 2011 Webspecial"></p>
-				</div>
-				<div class="col-lg-3">
-						<p>Bosch IAA 2011 Webspecial</p>
-					<p><more>For the IAA (<em>International Motor Show</em>) the automotive branch of German traditional company <a href="http://www.bosch-automotivetechnology.com/" target="_blank">Bosch</a> asked <a href="http://jvm-neckar.de" target="_blank">Jung von Matt/Neckar</a> to build the first adaptive design both parties created until then. Tasks included wireframing, conception for the multi-device support, final layout and frontend guidance for the development.<br/>
-					<sm>(Unfortunately offline)</sm><br/>
-						<!-- <sm><i class="icon-tag"></i> web design</sm></more> -->
-					</p>
-				</div>
-
-		</div><!--/.row -->
-		<br>
-		<br>
-	</div><!--/.container -->
-
-
-
-	<section id="contact" name="contact"></section>
-	<!--FOOTER DESCRIPTION -->
-	<div id="footwrap">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-2 col-lg-offset-1">
-					<h2>Contact</h2>
-				</div>
-				<div class="col-lg-6">
-					<p><t>Email:</t><br/>
-						<a href="mailto:b@werkshow.com?subject=Hello, nice to meet you.">b@werkshow.com</a><br/>
-					</p>
-					<p><t>Address:</t><br/>
-						<a href="https://goo.gl/maps/vXx08" target="_blank">Wisbyer Straße 10c<br/>
-						10439 Berlin<br/>
-						Germany<br/></a>
-					</p>
-					<p><t>Phone:</t><br/>
-						<a href="tel:+4915115675380">+49 151 15675380</a><br/>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p>On the Web:</p>
-					<p>
-						<a href="http://twitter.com/benefritz" target="_blank"><i class="icon-twitter"></i></a>
-						<a href="http://facebook.com/benjaminfritz" target="_blank"><i class="icon-facebook"></i></a>
-						<a href="http://instagram.com/benjamin" target="_blank"><i class="icon-instagram"></i></a>
-						<a href="http://dribbble.com/benjamin" target="_blank"><i class="icon-dribbble"></i></a>
-						<a href="http://github.com/benjaminfritz" target="_blank"><i class="icon-github"></i></a>
-						<a href="http://rainbowsunicorns.com" target="_blank"><i class="icon-archive"></i></a>
-					</p>
-				</div>
-			</div><!--/.row -->
-		</div><!--/.container -->
-	</div><!--/ #footer -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
-  </body>
 </html>
