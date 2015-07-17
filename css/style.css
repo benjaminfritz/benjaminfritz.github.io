@@ -858,3 +858,81 @@ ul.social-buttons li a:active {
     display: none;
     opacity: 0;
 }
+
+.imprint-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.imprint-modal .modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 3em;
+}
+
+.imprint-modal .modal-content p {
+    font-family: "Lora", "Times New Roman", serif;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.imprint-modal .modal-content p.item-intro {
+    margin: 20px 0 30px;
+    font-family: "Lora", "Times New Roman", serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.imprint-modal .modal-content ul.list-inline {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.imprint-modal .modal-content img {
+    margin-bottom: 30px;
+}
+
+.imprint-modal .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.imprint-modal .close-modal:hover {
+    opacity: .3;
+}
+
+.imprint-modal .close-modal .lr {
+    z-index: 1051;
+    width: 2px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #FF4136;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.imprint-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 2px;
+    height: 75px;
+    background-color: #FF4136;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.imprint-modal .modal-backdrop {
+    display: none;
+    opacity: 0;
+}
