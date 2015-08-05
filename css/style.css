@@ -5,7 +5,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
 }
 
 .text-muted {
@@ -52,7 +52,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -79,7 +79,7 @@ sub {
     border-radius: 50px;
     border: 2px solid #FF4136;
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: #FFF;
@@ -132,9 +132,9 @@ fieldset[disabled] .btn-primary.active {
     border: 2px solid #FF4136;
     border-radius: 50px;
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 2px;
     color: #FFF;
 }
@@ -192,7 +192,7 @@ fieldset[disabled] .btn-xl.active {
     background-repeat: no-repeat;
     text-transform: uppercase;
     text-indent: -9999px;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 0.5em;
     letter-spacing: 2px;
@@ -227,8 +227,8 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     letter-spacing: 4px;
     color: #fff;
     padding-bottom: 5px;
@@ -266,8 +266,8 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default .nav li a {
         text-transform: uppercase;
-        font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-weight: 400;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 500;
         letter-spacing: 4px;
         color: #fff;
         padding-bottom: 5px;
@@ -314,7 +314,7 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 22px;
     font-style: italic;
     font-weight: 400;
@@ -324,7 +324,7 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 42px;
     font-weight: 700;
     line-height: 50px;
@@ -338,7 +338,7 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Lora", "Times New Roman", serif;
+        font-family: "Lora", serif;
         font-size: 40px;
         font-style: italic;
         font-weight: 400;
@@ -348,7 +348,7 @@ header .intro-text .intro-heading {
     header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
-        font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Work Sans', sans-serif;
         font-size: 75px;
         font-weight: 700;
         line-height: 75px;
@@ -370,7 +370,7 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
@@ -710,8 +710,8 @@ section#contact .form-group input.form-control {
     border-radius: 0;
     border-bottom: 2px solid #fff;
     box-shadow: none;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     font-size: 16px;
 }
 
@@ -722,8 +722,8 @@ section#contact .form-group textarea.form-control {
     border-radius: 0;
     border-bottom: 2px solid #fff;
     box-shadow: none;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     font-size: 16px;
 }
 
@@ -732,33 +732,33 @@ section#contact .form-control:focus {
 }
 
 section#contact::-webkit-input-placeholder {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     color: #fff;
 }
 
 section#contact:-moz-placeholder {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     color: #fff;
 }
 
 section#contact::-moz-placeholder {
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     color: #fff;
 }
 
 section#contact:-ms-input-placeholder {
     text-transform: uppercase;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     color: #fff;
 }
 
 section#contact .text-danger {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     color: #FF4136;
 }
@@ -771,8 +771,8 @@ footer {
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     line-height: 40px;
 }
 
@@ -780,8 +780,8 @@ footer ul.quicklinks {
     margin-bottom: 0;
     text-transform: uppercase;
     text-transform: none;
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     line-height: 40px;
 }
 
@@ -840,7 +840,7 @@ ul.social-buttons li a:active {
 }
 
 .portfolio-modal .modal-content p {
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 16px;
     margin-bottom: 30px;
 }
@@ -855,7 +855,7 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 16px;
     font-style: italic;
 }
@@ -926,14 +926,14 @@ ul.social-buttons li a:active {
 }
 
 .imprint-modal .modal-content p {
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 16px;
     margin-bottom: 30px;
 }
 
 .imprint-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Lora", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 16px;
     font-style: italic;
 }
