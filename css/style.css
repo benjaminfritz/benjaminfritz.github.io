@@ -179,6 +179,16 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+.form-control::-moz-placeholder {
+  color: #fff;
+}
+.form-control:-ms-input-placeholder {
+  color: #fff;
+}
+.form-control::-webkit-input-placeholder {
+  color: #fff;
+}
+
 .navbar-default {
     border-color: transparent;
     background-color: #001F3F;
@@ -744,14 +754,12 @@ section#contact:-moz-placeholder {
 }
 
 section#contact::-moz-placeholder {
-    text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
     color: #fff;
 }
 
 section#contact:-ms-input-placeholder {
-    text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
     color: #fff;
