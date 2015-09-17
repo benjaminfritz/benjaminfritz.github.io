@@ -257,6 +257,8 @@ fieldset[disabled] .btn-xl.active {
     background-color: transparent;
     border-bottom: 2px solid #FF4136;
     color: #fff;
+    display: inline-block;
+    padding-right: 0;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
@@ -283,6 +285,11 @@ fieldset[disabled] .btn-xl.active {
         color: #fff;
         padding-bottom: 5px;
         padding-left: 20px;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+        display: block;
+        padding-right: 15px;
     }
 
     .navbar-default .navbar-brand {
