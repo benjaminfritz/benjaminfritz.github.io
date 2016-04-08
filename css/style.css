@@ -310,6 +310,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
     }
+
 }
 
 header {
@@ -640,6 +641,7 @@ section h3.section-subheading {
         padding: 0 30px 20px 20px;
         text-align: left;
     }
+    
 }
 
 @media(min-width:992px) {
@@ -709,74 +711,6 @@ section#contact .section-heading {
 
 section#contact .section-subheading {
     color: #fff;
-}
-
-section#contact .form-group {
-    margin-bottom: 25px;
-}
-
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
-    background-color: transparent;
-}
-
-section#contact .form-group input.form-control {
-    height: auto;
-    color: #fff;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #fff;
-    box-shadow: none;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-section#contact .form-group textarea.form-control {
-    height: 242px;
-    color: #fff;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #fff;
-    box-shadow: none;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-section#contact .form-control:focus {
-    border-color: #FF4136 !important;
-}
-
-section#contact::-webkit-input-placeholder {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    color: #fff;
-}
-
-section#contact:-moz-placeholder {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    color: #fff;
-}
-
-section#contact::-moz-placeholder {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    color: #fff;
-}
-
-section#contact:-ms-input-placeholder {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    color: #fff;
-}
-
-section#contact .text-danger {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 700;
-    color: #FF4136;
 }
 
 footer {
