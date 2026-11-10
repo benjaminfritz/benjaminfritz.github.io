@@ -189,6 +189,7 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
 <script>
 const P = PORTFOLIO;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const narrow = matchMedia('(max-width: 820px)');
 document.getElementById('line').innerHTML = `${P.role}. ${P.line}`;
 document.getElementById('mail').href = document.getElementById('mail2').href = P.contact.href;
 document.getElementById('name').innerHTML = `<span class="real">${P.name}</span>` + Array.from({ length: 8 }, (_, n) => `<span class="ghost" aria-hidden="true" style="--i:${n + 1}">${P.name}</span>`).join('');
@@ -309,6 +310,41 @@ document.querySelectorAll('.plate').forEach((plate) => {
       doc.addEventListener('pointermove', move);
       doc.addEventListener('pointerup', up);
     });
+
+    // In the narrow layout iOS gives a swipe that starts on a live demo to the demo, so the
+    // first swipe would not move the rail. A clearly sideways swipe drives the rail instead.
+    // Vertical swipes, taps and sliders stay with the demo.
+    let swipe = null;
+    doc.addEventListener('touchstart', (e) => {
+      swipe = null;
+      if (!narrow.matches || e.touches.length !== 1 || e.target.closest('input[type=range], [role=slider], textarea, [contenteditable]')) return;
+      const t = e.touches[0];
+      swipe = { x: t.screenX, y: t.screenY, left: rail.scrollLeft, index: api.index, at: performance.now(), axis: null, snap: '' };
+    }, { passive: true });
+    // Registered up front and not passive, so iOS lets it cancel the native scroll.
+    doc.addEventListener('touchmove', (e) => {
+      if (!swipe || e.touches.length !== 1) return;
+      const t = e.touches[0], dx = t.screenX - swipe.x, dy = t.screenY - swipe.y;
+      if (!swipe.axis) {
+        if (Math.hypot(dx, dy) < 6) return;
+        swipe.axis = Math.abs(dx) > Math.abs(dy) * 1.2 ? 'x' : 'y';
+        if (swipe.axis === 'y') { swipe = null; return; }
+        swipe.snap = rail.style.getPropertyValue('--snap-type');
+        rail.style.setProperty('--snap-type', 'none'); rail.style.scrollSnapType = 'none';
+      }
+      e.preventDefault();
+      rail.scrollTo({ left: swipe.left - dx, behavior: 'instant' });
+    }, { passive: false });
+    const endSwipe = () => {
+      const s = swipe;
+      swipe = null;
+      if (!s || s.axis !== 'x') return;
+      const moved = rail.scrollLeft - s.left, flick = performance.now() - s.at < 260 && Math.abs(moved) > 16;
+      api.go(Math.abs(moved) > 60 || flick ? s.index + Math.sign(moved) : s.index);
+      setTimeout(() => { rail.style.setProperty('--snap-type', s.snap); rail.style.scrollSnapType = ''; }, reduced ? 0 : 450);
+    };
+    doc.addEventListener('touchend', endSwipe);
+    doc.addEventListener('touchcancel', endSwipe);
   }));
   addEventListener('resize', () => { g = fit(ghostC); c = fit(chartC); });
 });
