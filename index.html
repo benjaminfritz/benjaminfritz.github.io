@@ -42,6 +42,11 @@ h1, h2, p, figure, dl { margin: 0; }
 .real .cell.live { color: var(--fg-2); }
 @media not ((hover: hover) and (pointer: fine)) { .hero-name { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; } }
 .hero p { position: relative; margin-top: 18px; font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--fg-2); }
+/* Until the scripts fill in the projects, hold their space so the footer doesn't show on the first screen. */
+#plates:empty { min-height: 100lvh; }
+/* Once they are written in, the projects fade in. Opacity only and no fill, so nothing lingers that could affect the stacking. */
+@keyframes plates-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) { #plates:not(:empty) { animation: plates-in 250ms var(--ease-out); } }
 
 .plate {
   --art-bg: #0d0d0c; --art-fg: #f1ede5; --art-muted: #a8a49b; --art-surface: #1d1c1a; --art-line: #474540; --art-accent: #cdc8bd;
@@ -148,8 +153,9 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
 <header id="top">
   <nav class="top" aria-label="Site"><div><a href="#about">About</a><a href="cv/">CV</a><a href="#imprint">Imprint</a><a id="mail" href="#">Email</a><a href="https://x.com/benjaminfritzzz" rel="me noopener">X</a></div></nav>
   <div class="hero" id="hero">
-    <h1 class="hero-name" id="name"></h1>
-    <p id="line"></p>
+    <!-- Name and line repeat shared/projects.js, so the hero is there before the scripts arrive. site.js then takes over. -->
+    <h1 class="hero-name" id="name">Benjamin Fritz</h1>
+    <p id="line">Senior Design Engineer / Manager. I design interfaces, then I build them. Always accessible. For humans and machines alike.</p>
   </div>
 </header>
 <main><div id="plates"></div><section class="about" id="about" aria-labelledby="t-about"></section></main>
