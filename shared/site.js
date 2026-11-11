@@ -170,6 +170,7 @@ const warmUp = (plate) => {
   const next = () => {
     const el = queue.shift();
     if (!el) return;
+    if (el.complete) { next(); return; } // An image that already loaded fires no load event; don't wait for one.
     let done = false;
     const go = () => { if (!done) { done = true; setTimeout(next, 150); } };
     el.addEventListener('load', go, { once: true });
@@ -521,6 +522,3 @@ document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
     goToSection(el, !reduced && e.detail > 0);
   });
 });
-
-// Everything above built the page synchronously, so the shell can show now (see the CSS in index.html).
-document.documentElement.classList.add('ready');
