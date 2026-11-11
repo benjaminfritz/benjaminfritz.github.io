@@ -33,7 +33,7 @@ document.getElementById('about').innerHTML = `
   <div>
     <h2 id="t-about">About</h2>
     <button class="portrait" type="button" aria-pressed="false" aria-label="Portrait of Benjamin Fritz. Press to switch between character art and photo.">
-      <picture><source srcset="shared/portrait.avif" type="image/avif"><img src="shared/portrait.jpg" width="1400" height="875" alt="" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="shared/portrait.avif" type="image/avif"><img src="shared/portrait.jpg" width="1400" height="875" alt="" decoding="async"></picture>
       <canvas aria-hidden="true"></canvas>
     </button>
     <p class="exposure-note">Yup, that’s me. Nice to see you!</p>
@@ -508,8 +508,14 @@ function goToSection(el, animate) {
 
   let width = 0;
   const resize = () => { const w = btn.clientWidth; if (w !== width) { width = w; build(); } };
-  const start = () => document.fonts.ready.then(() => { new ResizeObserver(resize).observe(btn); });
-  if (img.complete) start(); else img.addEventListener('load', start, { once: true });
+  // The photo is preloaded. The character art is built once the name has settled, so it doesn't
+  // make the name stutter, or straight away when someone heads for About first.
+  const loaded = img.complete ? Promise.resolve() : new Promise((r) => img.addEventListener('load', r, { once: true }));
+  const near = new Promise((r) => {
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { io.disconnect(); r(); } }, { rootMargin: '100% 0px' });
+    io.observe(btn);
+  });
+  Promise.all([loaded, document.fonts.ready, Promise.race([heroDone, near])]).then(() => { new ResizeObserver(resize).observe(btn); });
 })();
 
 document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
