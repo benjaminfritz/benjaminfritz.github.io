@@ -32,14 +32,14 @@ h1, h2, p, figure, dl { margin: 0; }
 .top a { position: relative; }
 .top a::after { content: ''; position: absolute; inset: 0 -10px; }
 
-.hero { position: relative; padding: clamp(40px, 11svh, 112px) var(--gutter) clamp(32px, 7svh, 72px); overflow: clip; --step: 8.4vw; }
+.hero { position: relative; padding: clamp(40px, 11svh, 112px) var(--gutter) clamp(32px, 7svh, 72px); overflow: clip; --step: 2.2vw; }
 .hero-name { position: relative; font: 300 clamp(3rem, 12.5vw, 6rem)/1 'Funnel Display', sans-serif; letter-spacing: -.03em; white-space: nowrap; }
 .real { position: relative; z-index: 1; }
 .ghost { position: absolute; left: 0; top: 0; color: var(--fg); opacity: calc(.26 * (1 - var(--i) / 9)); transform: translateX(calc(var(--i) * var(--step))); pointer-events: none; user-select: none; }
-@media (prefers-reduced-motion: no-preference) {
-  .ghost { animation: expose 520ms cubic-bezier(.23, 1, .32, 1) backwards; animation-delay: calc(120ms + (9 - var(--i)) * 55ms); }
-  @keyframes expose { from { opacity: 0; transform: translateX(calc(var(--i) * var(--step) + 18px)); } }
-}
+/* Each letter is a fixed-width cell, so the line never jitters while the glyphs shuffle. */
+.cell { display: inline-block; text-align: center; transition: color 240ms ease; }
+.real .cell.live { color: var(--fg-2); }
+@media not ((hover: hover) and (pointer: fine)) { .hero-name { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; } }
 .hero p { position: relative; margin-top: 18px; font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--fg-2); }
 
 .plate {
@@ -140,7 +140,6 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
   .shot figcaption { flex-direction: column; gap: 2px; }
   .shot figcaption span { text-align: left; }
   .axis button { font-size: .8125rem; padding-inline: 4px; }
-  .hero { --step: 11vw; }
 }
 </style>
 </head>
@@ -194,7 +193,9 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const trails = !reduced && matchMedia('(hover: hover) and (pointer: fine)').matches;
 document.getElementById('line').innerHTML = `${P.role}. ${P.line}`;
 document.getElementById('mail').href = document.getElementById('mail2').href = P.contact.href;
-document.getElementById('name').innerHTML = `<span class="real">${P.name}</span>` + Array.from({ length: 8 }, (_, n) => `<span class="ghost" aria-hidden="true" style="--i:${n + 1}">${P.name}</span>`).join('');
+const NAME_CHARS = [...P.name], NAME_GHOSTS = 6;
+document.getElementById('name').innerHTML = `<span class="sr-only">${P.name}</span>` + Array.from({ length: NAME_GHOSTS + 1 }, (_, i) =>
+  `<span class="${i ? 'ghost' : 'real'}" aria-hidden="true"${i ? ` style="--i:${i}"` : ''}>${NAME_CHARS.map((c) => `<span class="cell">${c === ' ' ? '&nbsp;' : c}</span>`).join('')}</span>`).join('');
 
 document.getElementById('plates').innerHTML = P.projects.map((p) => `
 <section class="plate" id="${p.id}" aria-labelledby="t-${p.id}">
@@ -375,28 +376,56 @@ document.addEventListener('focusin', (e) => {
   scrollTo({ top: clamp(flowTop + inside - 24, flowTop, flowTop + Math.max(0, plate.offsetHeight - innerHeight)), behavior: 'instant' });
 });
 
-// The exposure spacing follows the pointer across the hero.
-const hero = document.getElementById('hero');
-if (!reduced && matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  const ghostEls = [...hero.querySelectorAll('.ghost')];
-  let rest = null, target = 0, cur = 0, raf = 0, prev = 0;
-  const base = () => parseFloat(getComputedStyle(hero).getPropertyValue('--step')) * innerWidth / 100;
-  const draw = () => ghostEls.forEach((el, i) => { el.style.transform = `translateX(${cur * (i + 1)}px)`; });
-  const step = (t) => {
-    const dt = prev ? t - prev : 16.67; prev = t;
-    cur += (target - cur) * (1 - Math.pow(0.86, dt / 16.67));
-    draw();
-    if (Math.abs(target - cur) > 0.2) raf = requestAnimationFrame(step); else { raf = 0; prev = 0; }
-  };
-  const run = () => { if (!raf) raf = requestAnimationFrame(step); };
-  hero.addEventListener('pointermove', (e) => {
-    if (rest === null) { rest = base(); cur = rest; }
-    target = Math.max(rest * 0.25, Math.min(rest * 1.25, (e.clientX / innerWidth) * rest * 1.4));
-    run();
+// The name shuffles through its own letters, then locks in from left to right. The exposures behind
+// it show earlier frames, so the shuffle leaves a trail. Hover a letter (or tap, on touch) to shuffle again.
+document.fonts.ready.then(() => {
+  const h1 = document.getElementById('name');
+  const rows = [...h1.querySelectorAll('.real, .ghost')].map((l) => [...l.children]);
+  const widths = rows[0].map((c) => c.getBoundingClientRect().width);
+  // In em, so the cells keep fitting when the font size changes with the viewport.
+  const em = parseFloat(getComputedStyle(h1).fontSize);
+  widths.forEach((w, k) => rows.forEach((row) => { row[k].style.width = (w / em) + 'em'; }));
+  if (reduced) return;
+  const pool = [...new Set(NAME_CHARS.filter((c) => c !== ' '))];
+  const glyph = Object.fromEntries(pool.map((c) => [c, widths[NAME_CHARS.indexOf(c)]]));
+  // Each slot only borrows letters of a similar width, so a wide m never spills over a narrow j.
+  const slots = NAME_CHARS.map((c, k) => {
+    const near = pool.filter((p) => p !== c && glyph[p] <= widths[k] * 1.3 && glyph[p] >= widths[k] * 0.6);
+    return near.length ? near : pool.filter((p) => p !== c);
   });
-  hero.addEventListener('pointerleave', () => { if (rest !== null) { target = rest; run(); } });
-  addEventListener('resize', () => { rest = null; ghostEls.forEach((el) => { el.style.transform = ''; }); });
-}
+  const pick = (k, not) => { const s = slots[k]; let c; do c = s[Math.random() * s.length | 0]; while (c === not && s.length > 1); return c; };
+  let lockAt = [], history = [], last = 0, raf = 0;
+  const frame = (t) => {
+    if (t - last >= 55) {
+      last = t;
+      const now = NAME_CHARS.map((c, k) => (c === ' ' || t >= lockAt[k]) ? c : pick(k, history[0]?.[k]));
+      history.unshift(now); history.length = Math.min(history.length, NAME_GHOSTS + 1);
+      rows.forEach((row, i) => { const s = history[Math.min(i, history.length - 1)]; row.forEach((cell, k) => { cell.textContent = s[k] === ' ' ? '\u00a0' : s[k]; }); });
+      rows[0].forEach((cell, k) => cell.classList.toggle('live', NAME_CHARS[k] !== ' ' && t < lockAt[k]));
+      if (history.length > NAME_GHOSTS && history.every((s) => s.join('') === P.name)) { raf = 0; return; }
+    }
+    raf = requestAnimationFrame(frame);
+  };
+  const run = () => { if (!raf) raf = requestAnimationFrame(frame); };
+  const t0 = performance.now();
+  lockAt = NAME_CHARS.map((_, k) => t0 + 300 + k * 75);
+  run();
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    rows[0].forEach((cell, k) => {
+      if (NAME_CHARS[k] === ' ') return;
+      cell.addEventListener('pointerenter', () => { const now = performance.now(); if (lockAt[k] < now) { lockAt[k] = now + 420; run(); } });
+    });
+  } else {
+    // Touch has no hover: a tap shuffles the nearest letter and ripples out to its neighbours.
+    h1.addEventListener('click', (e) => {
+      const now = performance.now();
+      const centres = rows[0].map((c) => { const r = c.getBoundingClientRect(); return r.left + r.width / 2; });
+      const hit = centres.reduce((best, x, k) => Math.abs(x - e.clientX) < Math.abs(centres[best] - e.clientX) ? k : best, 0);
+      NAME_CHARS.forEach((c, k) => { if (c !== ' ') lockAt[k] = Math.max(lockAt[k], now + 260 + Math.abs(k - hit) * 60); });
+      run();
+    });
+  }
+});
 
 // Section links glide to their target. Keyboard use and reduced motion jump instantly.
 const cubic = (x1, y1, x2, y2) => {
