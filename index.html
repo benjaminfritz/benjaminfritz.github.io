@@ -25,6 +25,11 @@ a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px
 abbr[title] { text-decoration: none; }
 :focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
 h1, h2, p, figure, dl { margin: 0; }
+/* The hero, projects and About are built by site.js. On a first visit the browser would paint the
+   static shell (with the footer pulled up) while the scripts still download, so it waits until
+   site.js marks the page ready. If a script never arrives, the page shows itself after 4s anyway. */
+html:not(.ready) .hero, html:not(.ready) main, html:not(.ready) footer { visibility: hidden; animation: shell-failsafe 0s 4s forwards; }
+@keyframes shell-failsafe { to { visibility: visible; } }
 
 .top { display: flex; justify-content: flex-end; gap: 24px; padding: 8px var(--gutter); }
 .top div { display: flex; gap: 24px; }
@@ -181,7 +186,7 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
 </details>
 <p class="page-end"><a class="to-top" href="#top">Back to top<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10.5v-9M2 5.5l4-4 4 4"/></svg></a></p>
 </footer>
-<noscript><p style="padding:24px">This page shows its projects with JavaScript.</p></noscript>
+<noscript><style>html:not(.ready) .hero, html:not(.ready) main, html:not(.ready) footer { visibility: visible; animation: none; }</style><p style="padding:24px">This page shows its projects with JavaScript.</p></noscript>
 <script src="shared/projects.js"></script>
 <script src="shared/art.js"></script>
 <script src="shared/vendor/blossom-carousel-web.umd.js"></script>

@@ -521,3 +521,6 @@ document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
     goToSection(el, !reduced && e.detail > 0);
   });
 });
+
+// Everything above built the page synchronously, so the shell can show now (see the CSS in index.html).
+document.documentElement.classList.add('ready');
