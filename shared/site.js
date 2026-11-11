@@ -33,7 +33,7 @@ document.getElementById('about').innerHTML = `
   <div>
     <h2 id="t-about">About</h2>
     <button class="portrait" type="button" aria-pressed="false" aria-label="Portrait of Benjamin Fritz. Press to switch between character art and photo.">
-      <img src="shared/portrait.jpg" width="1400" height="875" alt="" decoding="async">
+      <picture><source srcset="shared/portrait.avif" type="image/avif"><img src="shared/portrait.jpg" width="1400" height="875" alt="" loading="lazy" decoding="async"></picture>
       <canvas aria-hidden="true"></canvas>
     </button>
     <p class="exposure-note">Yup, that’s me. Nice to see you!</p>
@@ -107,6 +107,7 @@ document.querySelectorAll('.plate').forEach((plate) => {
 
   // Live components run in their own document, so dragging their empty areas is forwarded to the rail.
   rail.querySelectorAll('iframe').forEach((frame) => frame.addEventListener('load', () => {
+    if (!frame.getAttribute('src')) return; // The empty placeholder document, before the demo starts.
     const doc = frame.contentDocument;
     doc.addEventListener('focusin', () => reveal(frame.closest('.shot')));
     doc.addEventListener('pointerdown', (e) => {
@@ -154,13 +155,18 @@ stacked.addEventListener('change', layout);
 stack.forEach((p) => new ResizeObserver(layout).observe(p));
 layout();
 
-// Frames load lazily. In portrait each frame fills the width, so WebKit would only start the
-// later live demos (each a full React app) during the first swipe, which makes it stutter.
-// Load a project's frames one at a time while it is still about a screen away.
-const warm = new IntersectionObserver((entries) => entries.forEach(({ isIntersecting, target }) => {
-  if (!isIntersecting) return;
-  warm.unobserve(target);
-  const queue = [...target.querySelectorAll('.rail [loading="lazy"]')];
+// Frames load lazily. Live demos are full React apps, so their iframes get no src until needed.
+// In portrait each frame fills the width, so WebKit would only start the later demos during the
+// first swipe, which makes it stutter. So a project's frames load one at a time while it is still
+// about a screen away. That warming waits until the name has settled, so booting demos don't make
+// the name animation stutter. A project whose frames are already on screen starts straight away.
+let heroSettled;
+const heroDone = new Promise((resolve) => { heroSettled = resolve; });
+const started = new WeakSet();
+const warmUp = (plate) => {
+  if (started.has(plate)) return;
+  started.add(plate);
+  const queue = [...plate.querySelectorAll('.rail iframe[data-src], .rail img[loading="lazy"]')];
   const next = () => {
     const el = queue.shift();
     if (!el) return;
@@ -168,11 +174,21 @@ const warm = new IntersectionObserver((entries) => entries.forEach(({ isIntersec
     const go = () => { if (!done) { done = true; setTimeout(next, 150); } };
     el.addEventListener('load', go, { once: true });
     setTimeout(go, 1500); // Frames that already loaded fire no load event.
-    el.loading = 'eager';
+    if (el.dataset.src) el.src = el.dataset.src; else el.loading = 'eager';
   };
   next();
-}), { rootMargin: '100% 0px' });
-stack.forEach((p) => warm.observe(p));
+};
+const watch = (targets, rootMargin) => {
+  const io = new IntersectionObserver((entries) => entries.forEach(({ isIntersecting, target }) => {
+    if (!isIntersecting) return;
+    io.unobserve(target);
+    warmUp(target.closest('.plate'));
+  }), { rootMargin });
+  targets.forEach((t) => io.observe(t));
+};
+watch(stack.map((p) => p.querySelector('.stage')), '0px');
+const idle = (fn) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 1000 }) : setTimeout(fn, 200));
+Promise.race([heroDone, new Promise((r) => setTimeout(r, 3000))]).then(() => idle(() => watch(stack, '100% 0px')));
 
 // Tabbing into a covered project brings the focused control out from under the next one.
 document.addEventListener('focusin', (e) => {
@@ -197,7 +213,7 @@ document.fonts.ready.then(() => {
   // In em, so the cells keep fitting when the font size changes with the viewport.
   const em = parseFloat(getComputedStyle(h1).fontSize);
   widths.forEach((w, k) => rows.forEach((row) => { row[k].style.width = (w / em) + 'em'; }));
-  if (reduced) return;
+  if (reduced) { heroSettled(); return; }
   const pool = [...new Set(NAME_CHARS.filter((c) => c !== ' '))];
   const glyph = Object.fromEntries(pool.map((c) => [c, widths[NAME_CHARS.indexOf(c)]]));
   // Each slot only borrows letters of a similar width, so a wide m never spills over a narrow j.
@@ -214,7 +230,7 @@ document.fonts.ready.then(() => {
       history.unshift(now); history.length = Math.min(history.length, NAME_GHOSTS + 1);
       rows.forEach((row, i) => { const s = history[Math.min(i, history.length - 1)]; row.forEach((cell, k) => { cell.textContent = s[k] === ' ' ? '\u00a0' : s[k]; }); });
       rows[0].forEach((cell, k) => cell.classList.toggle('live', NAME_CHARS[k] !== ' ' && t < lockAt[k]));
-      if (history.length > NAME_GHOSTS && history.every((s) => s.join('') === P.name)) { raf = 0; return; }
+      if (history.length > NAME_GHOSTS && history.every((s) => s.join('') === P.name)) { raf = 0; heroSettled(); return; }
     }
     raf = requestAnimationFrame(frame);
   };

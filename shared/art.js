@@ -22,7 +22,8 @@
       if (kind === 'img') return `<div class="art art-embed art-shot"><img src="${name}" alt="${esc(alt || title)}" width="1600" height="1000" loading="lazy" decoding="async"></div>`;
       if (EMBEDS[kind]) {
         const { src, label, dark } = EMBEDS[kind];
-        return `<div class="art art-embed${dark ? ' on-dark' : ''}"><iframe src="${src}#${name}" title="${esc(title)}, ${label}" loading="lazy"></iframe></div>`;
+        // No src yet: site.js starts each demo when its project comes near.
+        return `<div class="art art-embed${dark ? ' on-dark' : ''}"><iframe data-src="${src}#${name}" title="${esc(title)}, ${label}"></iframe></div>`;
       }
       return `<div class="art"><div class="art-in">${NOTES[key]()}</div></div>`;
     },
