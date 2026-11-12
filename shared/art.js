@@ -17,9 +17,14 @@
   };
 
   window.Art = {
-    html(key, title, alt) {
+    html(key, title, alt, mobile) {
       const [kind, name] = key.split(':');
-      if (kind === 'img') return `<div class="art art-embed art-shot"><img src="${name}" alt="${esc(alt || title)}" width="1600" height="1000" loading="lazy" decoding="async"></div>`;
+      if (kind === 'img') {
+        const img = `<img src="${name}" alt="${esc(alt || title)}" width="1600" height="1000" loading="lazy" decoding="async">`;
+        if (!mobile) return `<div class="art art-embed art-shot">${img}</div>`;
+        // Phones get the same screen in the app's mobile layout, cropped to the frame there (1 : 1.1).
+        return `<div class="art art-embed art-shot has-mobile"><picture><source media="(max-width: 820px)" srcset="${mobile}" width="1170" height="1287">${img}</picture></div>`;
+      }
       if (EMBEDS[kind]) {
         const { src, label, dark } = EMBEDS[kind];
         // No src yet: site.js starts each demo when its project comes near.

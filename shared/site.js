@@ -17,7 +17,7 @@ document.getElementById('plates').innerHTML = P.projects.map((p) => `
   </header>
   <div class="stage">
     <blossom-carousel class="rail" tabindex="0" role="group" aria-label="${p.name}, ${p.slides.length} frames. Use the left and right arrow keys to move.">
-      ${p.slides.map((s) => `<figure class="shot"><div class="frame">${Art.html(s.art, s.title, s.alt)}</div><figcaption><b class="cap">${s.title}</b><span>${s.note}</span></figcaption></figure>`).join('')}
+      ${p.slides.map((s) => `<figure class="shot"><div class="frame">${Art.html(s.art, s.title, s.alt, s.mobile)}</div><figcaption><b class="cap">${s.title}</b><span>${s.note}</span></figcaption></figure>`).join('')}
     </blossom-carousel>
     <canvas class="ghosts" aria-hidden="true"></canvas>
   </div>
