@@ -6,6 +6,17 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Benjamin Fritz, Senior Design Engineer / Manager</title>
 <meta name="description" content="Portfolio of Benjamin Fritz, Senior Design Engineer / Manager.">
+<link rel="canonical" href="https://benjaminfritz.co/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Benjamin Fritz">
+<meta property="og:url" content="https://benjaminfritz.co/">
+<meta property="og:title" content="Benjamin Fritz, Senior Design Engineer / Manager">
+<meta property="og:description" content="I design interfaces, then I build them. Always accessible. For humans and machines alike.">
+<meta property="og:image" content="https://benjaminfritz.co/shared/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Benjamin Fritz, Senior Design Engineer / Manager, set in light type on black with trailing exposures of the name.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#060606">
 <link rel="icon" href="shared/icons/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="shared/icons/favicon.svg" type="image/svg+xml">
@@ -70,7 +81,12 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
 .frame .art { background: var(--art-bg); outline: 1px solid var(--line); outline-offset: -1px; }
 .shot figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 12px; }
 .cap { font-weight: 500; }
-.shot figcaption span { color: var(--fg-2); text-align: right; }
+.cap-main { flex: none; white-space: nowrap; }
+.kind { margin-left: 12px; color: var(--fg-2); }
+/* Frames that run real code say so, with a mark as well as the word. */
+.kind.live { color: var(--fg); }
+.kind.live::before { content: ''; display: inline-block; width: 6px; height: 6px; margin-right: 7px; border-radius: 50%; background: currentColor; vertical-align: .12em; }
+.note { color: var(--fg-2); text-align: right; text-wrap: pretty; }
 .ghosts { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: screen; visibility: hidden; }
 
 .chart { position: relative; margin: 20px var(--gutter) 0; height: 92px; }
@@ -135,7 +151,8 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
 /* Stacking: each project pins by its bottom edge and the next slides over it. */
 .shade { display: none; }
 @media (min-width: 821px) {
-  .plate { position: sticky; min-height: 100svh; background: var(--bg); box-shadow: 0 -20px 44px -8px rgb(0 0 0 / .6); }
+  /* A project fills one screen: site.js measures what the title, caption and timeline need and gives the frames the rest as --fit. */
+  .plate { position: sticky; min-height: 100svh; background: var(--bg); box-shadow: 0 -20px 44px -8px rgb(0 0 0 / .6); --h: min(58svh, 44vw, var(--fit, 100svh)); padding-block: clamp(24px, 5svh, 52px) clamp(24px, 4svh, 44px); }
   .shade { display: block; position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
 }
 
@@ -146,7 +163,7 @@ h2 { font: 300 clamp(3.25rem, 9vw, 6rem)/.95 'Funnel Display', sans-serif; lette
   .plate-head, .close { grid-template-columns: 1fr; }
   .rail { padding-inline-end: calc(var(--gutter) + 28px); gap: 16px; }
   .shot figcaption { flex-direction: column; gap: 2px; }
-  .shot figcaption span { text-align: left; }
+  .note { text-align: left; }
   .axis button { font-size: .8125rem; padding-inline: 4px; }
 }
 </style>

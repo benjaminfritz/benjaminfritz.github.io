@@ -17,7 +17,7 @@ document.getElementById('plates').innerHTML = P.projects.map((p) => `
   </header>
   <div class="stage">
     <blossom-carousel class="rail" tabindex="0" role="group" aria-label="${p.name}, ${p.slides.length} frames. Use the left and right arrow keys to move.">
-      ${p.slides.map((s) => `<figure class="shot"><div class="frame">${Art.html(s.art, s.title, s.alt, s.mobile)}</div><figcaption><b class="cap">${s.title}</b><span>${s.note}</span></figcaption></figure>`).join('')}
+      ${p.slides.map((s) => `<figure class="shot"><div class="frame">${Art.html(s.art, s.title, s.alt, s.mobile)}</div><figcaption><span class="cap-main"><b class="cap">${s.title}</b><span class="kind${s.kind.startsWith('Live') ? ' live' : ''}">${s.kind}</span></span><span class="note">${s.note}</span></figcaption></figure>`).join('')}
     </blossom-carousel>
     <canvas class="ghosts" aria-hidden="true"></canvas>
   </div>
@@ -128,14 +128,29 @@ document.querySelectorAll('.plate').forEach((plate) => {
     });
 
   }));
-  addEventListener('resize', () => { g = fit(ghostC); c = fit(chartC); });
+  // The stage changes size with the window and when the frames are fitted to the screen (see below).
+  new ResizeObserver(() => { g = fit(ghostC); c = fit(chartC); }).observe(stage);
 });
 
 // Stacked projects. Pinning by the bottom edge keeps tall projects fully reachable.
 const stack = [...document.querySelectorAll('.plate')];
 const stacked = matchMedia('(min-width: 821px)');
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-const pin = () => stack.forEach((p) => { p.style.top = `${Math.min(0, innerHeight - p.offsetHeight)}px`; });
+// A project should fit one screen, so its frames get the height left over by its title, caption and
+// timeline. Below a useful size they stop shrinking, and the project is pinned by its bottom edge instead.
+const MIN_FRAME = 320;
+const fitFrames = () => stack.forEach((p) => {
+  if (!stacked.matches) { p.style.removeProperty('--fit'); return; }
+  const frame = p.querySelector('.frame'), chart = p.querySelector('.chart'), pad = parseFloat(getComputedStyle(p).paddingBottom);
+  // Narrower frames can wrap a caption onto a second line, which takes a little more room, so measure again until it settles.
+  for (let pass = 0; pass < 3; pass++) {
+    const natural = chart.getBoundingClientRect().bottom - p.getBoundingClientRect().top + pad;
+    const room = Math.max(MIN_FRAME, Math.floor(innerHeight - (natural - frame.offsetHeight))) + 'px';
+    if (p.style.getPropertyValue('--fit') === room) break;
+    p.style.setProperty('--fit', room);
+  }
+});
+const pin = () => { fitFrames(); stack.forEach((p) => { p.style.top = `${Math.min(0, innerHeight - p.offsetHeight)}px`; }); };
 
 // A covered project dims as the next one slides over it.
 let dimQueued = false;
